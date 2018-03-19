@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEEK Jobs Checkout System</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="/js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+
+      <h1>SEEK Job Ads Checkout System</h1>
+
+      <form action="/" method="post">
+        <fieldset name="cusomter">
+          <legend>Select customer</legend>
+          <input type="radio" name="customer" id="default" value="default" checked="checked"><label for="default">Default</label>
+          <input type="radio" name="customer" id="unilever" value="Unilever"><label for="unilever">Unilever</label>
+          <input type="radio" name="customer" id="apple" value="Apple"><label for="apple">Apple</label>
+          <input type="radio" name="customer" id="nike" value="Nike"><label for="nike">Nike</label>
+          <input type="radio" name="customer" id="ford" value="Ford"><label for="ford">Ford</label>
+        </fieldset>
+
+        <fieldset name="adtype_group" id="adtype_group">
+          <legend>Select ad type</legend>
+          <fieldset class="adtypes">
+            <legend>Item 1</legend>
+            <input type="radio" name="adtype[0]" id="classic0" value="classic" checked="checked"><label for="classic0">Classic</label><!--
+            --><input type="radio" name="adtype[0]" id="standout0" value="standout"><label for="standout0">Standout</label><!--
+            --><input type="radio" name="adtype[0]" id="premium0" value="premium"><label for="premium0">Premium</label>
+          </fieldset>
+        </fieldset>
+        
+        <div class="action">
+          <input type="button" class="ghost-button" value="Add a new item" onclick="add_adtype_group()">
+          <input type="submit" class="ghost-button checkout" value="Checkout">
+        </div>
+      </form>
+
+      <% if (total !== null) { %>
+        <p><%- total %></p>
+      <% } %>
+      <% if (error !== null) { %>
+        <p><%- error %></p>
+      <% } %>
+      
+      <form action="/" method="get">
+        <input type="submit" class="ghost-button" value="Reset">
+      </form>
+    </div>
+  </body>
+</html>
