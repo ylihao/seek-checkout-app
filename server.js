@@ -118,3 +118,13 @@ app.post('/', function (req, res) {
 app.listen(3000, function () {
   console.log(`SEEK Jobs Ad Checkout app listening on port 3000. Open 'http://localhost:3000/' on your web browser.`);
 });
+
+module.exports = {
+  get_adtype_breakdown: get_adtype_breakdown,
+  get_default_total: get_default_total,
+  get_unilever_total: get_unilever_total,
+  get_apple_total: get_apple_total,
+  get_nike_total: get_nike_total,
+  get_ford_total: get_ford_total,
+  get_total: get_total
+}
